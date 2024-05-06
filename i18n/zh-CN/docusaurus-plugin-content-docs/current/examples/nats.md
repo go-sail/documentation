@@ -2,10 +2,10 @@
 sidebar_position: 6
 ---  
 # Nats  
-This chapter contains nats usage examples.  
-## Introduction  
-The nats component is a secondary encapsulation of `nats-io/nats.go`.  
-When Go-Sail starts, it will automatically initialize the Nats component if enabled. After that, developers can call it directly through the `sail` keyword.  
+这个章节将介绍Nats如何使用。  
+## 简介  
+nats组件是`nats-io/nats.go`的二次封装。  
+当Go-Sail启动时，如果启用，它将自动初始化Nats组件。 之后开发者就可以直接通过`sail`关键字来调用它。  
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/sail"
@@ -17,8 +17,8 @@ func main() {
     // highlight-end
 }
 ```  
-## Configuration  
-In the previous chapter, we learned about the detailed configuration of Nats, which is as follows:  
+## 配置  
+上一章我们学习了Nats的详细配置，如下：  
 ```go title="github.com/keepchen/go-sail/lib/nats/conf.go" showLineNumbers  
 type Conf struct {
     Enable    bool     `yaml:"enable" toml:"enable" json:"enable" default:"false"` //是否启用
@@ -27,8 +27,8 @@ type Conf struct {
     Password  string   `yaml:"password" toml:"password" json:"password"`           //密码
 }
 ```  
-## Usage  
-### Publish  
+## 使用方法  
+### 发布  
 ```go title="main.go" showLineNumbers  
 import (
     natsLib "github.com/nats-io/nats.go"
@@ -64,7 +64,7 @@ func main() {
     }
 }
 ```  
-### Subscribe  
+### 订阅  
 ```go title="main.go" showLineNumbers  
 import (
     natsLib "github.com/nats-io/nats.go"
@@ -117,7 +117,7 @@ func main() {
 }
 ```  
 
-### Others  
-For more native calling methods, please view the official documentation of [nats-io/nats.go](https://github.com/nats-io/nats.go).  
+### 其他  
+更多原生调用方法请查看[nats-io/nats.go](https://github.com/nats-io/nats.go)官方文档。  
 
 

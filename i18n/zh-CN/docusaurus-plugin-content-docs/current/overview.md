@@ -2,23 +2,23 @@
 sidebar_position: 1
 ---
 
-# Overview
+# 概览
 
-A lightweight progressive Web Framework written in Go.
+一个轻量的渐进式golang web框架。
 
-## Getting Started
+## 准备开始  
 
-### Installation
+### 安装  
 
 > Requirement: [Go](https://go.dev/dl/) version **1.19** or above.  
 
-```bash  
+```bash  showLineNumbers  
 go get -u github.com/keepchen/go-sail/v3
 ```
 
-### Launch your app  
-- Copy the following code to the `main.go` file
-```go title="main.go"
+### 启动你的服务  
+- 将下面的代码拷贝到`main.go`文件中  
+```go title="main.go" showLineNumbers  
 import (
     "github.com/gin-gonic/gin"
     "github.com/keepchen/go-sail/v3/sail"
@@ -35,11 +35,11 @@ var (
 )
 
 func main() {
-  sail.WakeupHttp("go-sail", conf).Hook(registerRoutes, nil, nil).Launch()
+    sail.WakeupHttp("go-sail", conf).Hook(registerRoutes, nil, nil).Launch()
 }
 ```  
-- Run command `go run main.go`  
-- Open browser and access url: [http://localhost:8000/hello](http://localhost:8000/hello)  
-- Screenshot:  
-![/img/launch.png](/img/launch.png)  
-- Your app is ready, Enjoy it. :)
+- 运行命令`go run main.go`  
+- 打开浏览器并访问： [localhost:8080/hello](http://localhost:8080/hello)  
+- 屏幕截图:  
+![screenshot](/img/launch.png)  
+- 你的服务已经准备就绪，祝你用的开心。 :)

@@ -18,7 +18,7 @@ func main() {
 }
 ```  
 ## Configuration  
-In the previous chapter, we learned about the detailed configuration of Redis (standalone and cluster), which is as follows:  
+In the previous chapter, we learned about the detailed configuration of Etcd, which is as follows:  
 ```go title="github.com/keepchen/go-sail/lib/etcd/conf.go" showLineNumbers  
 type Conf struct {
     Enable    bool        `yaml:"enable" toml:"enable" json:"enable" default:"false"` //是否启用

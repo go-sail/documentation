@@ -2,17 +2,17 @@
 sidebar_position: 3
 ---
 
-# Toolkit  
-## Introduction  
-In most cases, toolkits can also be used individually. Therefore, you can easily import and use them through the `go get` command.  
-Their source code addresses are located at [github.com/keepchen/go-sail/v3/utils](https://github.com/keepchen/go-sail/tree/main/utils).  
-For example, you can use the `go get` command to install the toolkit locally, and then introduce it at the `import` instruction of the code file.  
+# 工具包  
+## 简介  
+在大多数情况下，工具包也可以单独使用。 因此，您可以通过“go get”命令轻松导入和使用它们。  
+它们的源代码地址位于[github.com/keepchen/go-sail/v3/utils](https://github.com/keepchen/go-sail/tree/main/utils)。  
+例如，您可以使用`go get`命令将工具包安装到本地，然后在代码文件的`import`指令处引入。  
 ```bash showLineNumbers  
 go get -u github.com/keepchen/go-sail/v3/utils
 ```  
-## Usage  
+## 使用方法  
 ### RSA  
-#### Encrypt  
+#### 加密  
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/utils"
@@ -22,7 +22,7 @@ func main() {
     result, err := utils.RSAEncrypt(rawString, publicKey)
 }
 ```  
-#### Decrypt    
+#### 解密    
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/utils"
@@ -32,9 +32,9 @@ func main() {
     result, err := utils.RSADecrypt(rawString, publicKey)
 }
 ```  
-## Special case  
-### Redis lock  
-In the toolkit, redis lock is a special case and needs to depend on the redis library. Therefore, before using it, you need to instantiate the redis connection in advance, either standalone or cluster.  
+## 特例  
+### Redis锁  
+工具包中，redis锁是一种特例，需要依赖redis库。因此，在使用之前，需要提前实例化redis连接，可以是单机的，也可以是集群的。  
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/lib/redis"

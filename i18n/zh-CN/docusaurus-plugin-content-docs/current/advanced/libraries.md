@@ -2,18 +2,17 @@
 sidebar_position: 2
 ---
 
-# Libraries  
-## Introduction  
-Library packages are designed from the outset to be imported and run independently. Therefore, you can easily import and use them through the `go get` command.  
-Their source code addresses are located at [github.com/keepchen/go-sail/v3/lib](https://github.com/keepchen/go-sail/tree/main/lib).  
-
-Taking redis as an example, you can use the `go get` command to install the redis library locally, and then introduce it at the `import` instruction of the code file.  
+# 类库  
+## 简介  
+库包从一开始就设计为可导入和独立运行。 因此，您可以通过“go get”命令轻松导入和使用它们。
+它们的源代码地址位于[github.com/keepchen/go-sail/v3/lib](https://github.com/keepchen/go-sail/tree/main/lib)。  
+以redis为例，可以使用go get命令将redis库安装到本地，然后在代码文件的import指令处引入。    
 ```bash showLineNumbers  
 go get -u github.com/keepchen/go-sail/v3/lib/redis
 ```  
-## Usage  
+## 使用方法  
 ### Redis  
-#### Standalone
+#### 单机  
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/lib/redis"
@@ -34,7 +33,7 @@ func otherFunc() {
     ...
 }
 ```  
-#### Cluster  
+#### 集群  
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/lib/redis"
@@ -56,7 +55,7 @@ func otherFunc() {
     ...
 }
 ```  
-#### Initialize new instance  
+#### 初始化新连接  
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/lib/redis"

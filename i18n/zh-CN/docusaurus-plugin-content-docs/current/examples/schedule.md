@@ -1,12 +1,12 @@
 ---
 sidebar_position: 11
 ---  
-# Task Schedule  
-This chapter contains schedule usage examples.  
-## Introduction  
-Schedule components are roughly divided into two categories. One type is executed according to time intervals. This type of tasks is implemented using the native `time.Ticker`. The other type is executed using Linux Crontab expressions. This type of bottom layer encapsulates `robfig/cron` Class library. Scheduled tasks provide developers with easy-to-use syntax sugar.  
-## Usage  
-### Interval  
+# 计划任务  
+这个章节将介绍计划任务如何使用。  
+## 简介  
+计划任务组件大致分为两类。一种是按照时间间隔执行。此类任务是使用本机“time.Ticker”实现的。另一种类型是使用Linux Crontab表达式执行的。该类底层封装了`robfig/cron`类库。计划任务为开发者提供了简单易用的语法糖。  
+## 使用方法  
+### 间隔性的  
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/schedule"
@@ -21,7 +21,7 @@ func main() {
     ch <- struct{}{} //waiting...
 }
 ```  
-### Linux Crontab Style    
+### Linux Crontab风格的    
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/schedule"
@@ -36,7 +36,7 @@ func main() {
     ch <- struct{}{} //waiting...
 }
 ```  
-### Delay (One-time)  
+### 延迟性的 (一次性的)  
 ```go title="main.go" showLineNumbers  
 import (
     "time"
@@ -52,11 +52,11 @@ func main() {
     ch <- struct{}{} //waiting...
 }
 ```  
-### Without Overlapping  
-The function of the `WithoutOverlapping()` method is to prevent tasks from running repeatedly at the same time. It is useful when your service runs multiple copies and you want to ensure the uniqueness of the task.  
+### 防止任务堆叠  
+`WithoutOverlapping()`方法的作用是防止任务同时重复运行。当您的服务运行多个副本并且您希望确保任务的唯一性时，它非常有用。  
 :::warning  
-This feature requires initializing the redis connection instance in advance, both in standalone mode and cluster mode.  
-Otherwise it will **panic**.
+该功能需要提前初始化redis连接实例，无论是单机模式还是集群模式。
+否则它会**panic**。
 :::
 ```go title="main.go" showLineNumbers  
 import (
@@ -73,9 +73,9 @@ func main() {
 }
 ```  
 :::note  
-It should be noted that your task should not be entirely a goroutine, otherwise unexpected situations will occur and `WithoutOverlapping()` will also fail.  
+需要注意的是，你的任务不应该完全是一个goroutine，否则会出现意想不到的情况，并且`WithoutOverlapping()`也会失败。  
 :::  
-Here is an example of an error:  
+这里给出了一个错误的示范：  
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/schedule"
@@ -96,8 +96,8 @@ func main() {
     ch <- struct{}{} //waiting...
 }
 ```  
-### Cancel  
-Tasks that have not been started or are not running will be canceled directly. A running task will wait for its run to complete and then not start again.  
+### 取消  
+尚未启动或未运行的任务将被直接取消。 正在运行的任务将等待其运行完成，然后不再启动。  
 ```go title="main.go" showLineNumbers  
 import (
     "time"
@@ -117,7 +117,7 @@ func main() {
     ch <- struct{}{} //waiting...
 }
 ```  
-### Crontab Expressions   
+### Crontab表达式   
 ```go title="github.com/keepchen/go-sail/schedule/crontabexpr.go"  
 EveryMinute                           = "* * * * *"             //每分钟的开始第0秒
 EveryFiveMinute                       = "*/5 * * * *"           //每5分钟的开始第0秒
@@ -135,7 +135,7 @@ TenClockAtWeekend                     = "0 10 * * SAT,SUN"      //每个周末�
 HourlyBetween9And17ClockAtWeekday     = "0 9-17 * * MON-FRI"    //每个工作日（周一~周五）的上午9点0分到下午5点0分每小时一次
 HalfHourlyBetween9And17ClockAtWeekday = "*/30 9-17 * * MON-FRI" //每个工作日（周一~周五）的上午9点0分到下午5点0分每半时一次
 ```  
-#### usage
+#### 使用方法
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/schedule"

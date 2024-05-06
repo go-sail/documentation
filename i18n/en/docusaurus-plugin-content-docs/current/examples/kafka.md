@@ -30,7 +30,7 @@ func main() {
 }
 ```  
 ## Configuration  
-In the previous chapter, we learned about the detailed configuration of Redis (standalone and cluster), which is as follows:  
+In the previous chapter, we learned about the detailed configuration of Kafka, which is as follows:  
 ```go title="github.com/keepchen/go-sail/lib/kafka/conf.go" showLineNumbers  
 type Conf struct {
     Enable       bool        `yaml:"enable" toml:"enable" json:"enable" default:"false"`   //是否启用

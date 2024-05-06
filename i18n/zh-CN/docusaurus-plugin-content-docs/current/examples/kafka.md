@@ -2,10 +2,10 @@
 sidebar_position: 10
 ---  
 # Kafka  
-This chapter contains kafka usage examples.  
-## Introduction  
-The Kafka component pair is a simple encapsulation of the `segmentio/kafka-go` library, allowing developers to ignore connection details.  
-When Go-Sail starts, it will automatically initialize the Kafka component if enabled. After that, developers can call it directly through the `sail` keyword.  
+这一章节将介绍Kafka组件如何使用。  
+## 简介  
+Kafka组件对是对segmentio/kafka-go库的简单封装，允许开发者忽略连接细节。  
+当Go-Sail启动时，如果启用，它将自动初始化Kafka组件。之后开发者就可以直接通过`sail`关键字来调用它。  
 ```go title="main.go" showLineNumbers  
 import (
     "github.com/keepchen/go-sail/v3/sail"
@@ -29,8 +29,8 @@ func main() {
     // highlight-end
 }
 ```  
-## Configuration  
-In the previous chapter, we learned about the detailed configuration of Kafka, which is as follows:  
+## 配置  
+在上一章中，我们学习了Kafka的详细配置，如下：  
 ```go title="github.com/keepchen/go-sail/lib/kafka/conf.go" showLineNumbers  
 type Conf struct {
     Enable       bool        `yaml:"enable" toml:"enable" json:"enable" default:"false"`   //是否启用
@@ -42,7 +42,6 @@ type Conf struct {
     Tls          *tls.Config `yaml:"-" toml:"-" json:"-"`                                  //tls配置//tls配置
 }
 ```  
-## Usage  
-### Others  
-For more native calling methods, please view the official documentation of [segmentio/kafka-go](https://github.com/segmentio/kafka-go).  
-
+## 使用方法  
+### 其他  
+更多原生调用方法请查看[segmentio/kafka-go](https://github.com/segmentio/kafka-go)的官方文档。  

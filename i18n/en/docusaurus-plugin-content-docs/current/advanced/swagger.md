@@ -148,7 +148,7 @@ func RegisterRoutes(r *gin.Engine) {
 	}
 }
 ```  
-### Hanlder  
+### Handler  
 ```go title="github.com/keepchen/go-sail/examples/pkg/app/user/http/handler/user.go" showLineNumbers  
 package handler
 
