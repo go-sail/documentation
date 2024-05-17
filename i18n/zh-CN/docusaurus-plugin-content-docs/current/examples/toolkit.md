@@ -224,7 +224,7 @@ func main() {
 ```  
 ## Redis锁  
 :::tip  
-redis锁会在内部自动更新，开发者无需关心内部细节。  
+redis锁会在内部自动续期，开发者无需关心内部细节。  
 :::  
 :::warning  
 您必须首先使用“redis.InitRedis”或“redis.InitRedisCluster”初始化连接。  

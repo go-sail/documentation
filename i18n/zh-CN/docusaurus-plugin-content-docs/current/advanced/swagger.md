@@ -225,8 +225,8 @@ swag init --dir pkg/app/order \
     --generalInfo order.go && \
 redoc-cli bundle pkg/app/order/http/docs/*.yaml -o pkg/app/order/http/docs/docs.html
 ```  
-After modifying the response path as needed, execute the generate command and the document content will be generated.  
-The above code example can be found in the source file: [github.com/keepchen/go-sail](https://github.com/keepchen/go-sail/tree/main/examples).  
+根据需要修改响应路径后，执行generate命令，就会生成文档内容。
+上面的代码示例可以在源文件中找到：[github.com/keepchen/go-sail](https://github.com/keepchen/go-sail/tree/main/examples).  
 
 ## 插件  
 ### Redocly的复制按钮  
